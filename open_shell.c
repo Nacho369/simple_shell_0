@@ -9,9 +9,7 @@ int main(void)
 {
 	size_t n = BUFFER_SIZE;
 	char *buff = malloc(sizeof(char) * n);
-	int status, i;
-
-	char *ch_cmd = {"ls", "cd"};
+	int status;
 
 	if (buff == NULL)
 		printf("Failed to allocate memory!");
@@ -19,13 +17,9 @@ int main(void)
 	do {
 		printf("#: ");
 		status = getline(&buff, &n, stdin);
-
-		for (i = 0; i < 2; i++)
-		{
-			if (ch_cmd[i] != buff)
-				printf("./shell: No such file or directory");
-		}
 	} while (status != EOF);
+
+	printf("\n");
 
 	free(buff);
 
