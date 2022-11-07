@@ -9,18 +9,20 @@ int main(int ac UNUSED, char *av[] UNUSED)
 {
 	size_t n = BUFFER_SIZE;
 	char *buff = malloc(sizeof(char) * n);
-	int status, comp, i;
+	int status;
+	char *cmd = "ls";
 
 	if (buff == NULL)
-		printf("Failed to allocate memory!");
+		printf("Failed to allocate memory!\n");
 
 	do {
 		printf("#: ");
 		status = getline(&buff, &n, stdin);
 
-		comp = _strcmp(buff, "ls");
-		if (comp == 0)
-			printf("Matches");
+		if (_strcmp(buff, cmd))
+			printf("Matches\n");
+		else
+			printf("Invalid\n");
 	} while (status != EOF);
 
 	printf("\n");
