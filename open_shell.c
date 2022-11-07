@@ -5,11 +5,11 @@
  *
  * Return: Success(0)
  */
-int main(void)
+int main(int ac UNUSED, char *av[] UNUSED)
 {
 	size_t n = BUFFER_SIZE;
 	char *buff = malloc(sizeof(char) * n);
-	int status;
+	int status, comp, i;
 
 	if (buff == NULL)
 		printf("Failed to allocate memory!");
@@ -17,6 +17,10 @@ int main(void)
 	do {
 		printf("#: ");
 		status = getline(&buff, &n, stdin);
+
+		comp = _strcmp(buff, "ls");
+		if (comp == 0)
+			printf("Matches");
 	} while (status != EOF);
 
 	printf("\n");
