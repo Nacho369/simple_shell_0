@@ -1,5 +1,12 @@
 #include "shell.h"
 
+/*
+  List of builtin commands, followed by their corresponding functions.
+ */
+int lsh_num_builtins()
+{
+	return sizeof(builtin_str) / sizeof(char *);
+}
 /**
    @brief Builtin command: change directory.
    @param args List of args.  args[0] is "cd".  args[1] is the directory.
