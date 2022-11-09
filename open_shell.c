@@ -1,33 +1,19 @@
 #include "shell.h"
 
 /**
- * main - Entry point to the program
- *
- * Return: Success(0)
+   @brief Main entry point.
+   @param argc Argument count.
+   @param argv Argument vector.
+   @return status code
  */
-int main(int ac UNUSED, char *av[] UNUSED)
+int main(int argc, char **argv)
 {
-	size_t n = BUFFER_SIZE;
-	char *buff = malloc(sizeof(char) * n);
-	int status;
-	char *cmd = "ls";
+	// Load config files, if any.
 
-	if (buff == NULL)
-		printf("Failed to allocate memory!\n");
+	// Run command loop.
+	lsh_loop();
 
-	do {
-		printf("#: ");
-		status = getline(&buff, &n, stdin);
+	// Perform any shutdown/cleanup.
 
-		if (_strcmp(buff, cmd))
-			printf("Matches\n");
-		else
-			printf("Invalid\n");
-	} while (status != EOF);
-
-	printf("\n");
-
-	free(buff);
-
-	return (0);
+	return EXIT_SUCCESS;
 }
