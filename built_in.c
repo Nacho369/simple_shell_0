@@ -33,7 +33,7 @@ int lsh_cd(char **args)
    @param args List of args.  Not examined.
    @return Always returns 1, to continue executing.
  */
-int lsh_help(char **args)
+int lsh_help()
 {
 	int i;
 	printf("Stephen Brennan's LSH\n");
@@ -54,7 +54,7 @@ int lsh_help(char **args)
    @param args List of args.  Not examined.
    @return Always returns 0, to terminate execution.
  */
-int lsh_exit(char **args)
+int lsh_exit()
 {
 	return 0;
 }

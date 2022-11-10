@@ -37,7 +37,7 @@ char *lsh_read_line(void)
 
 	while (1)
 	{
-		// Read a character
+		/* Read a character */
 		c = getchar();
 
 		if (c == EOF)
