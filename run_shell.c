@@ -13,7 +13,7 @@ int lsh_launch(char **args)
 	pid = fork();
 	if (pid == 0)
 	{
-		// Child process
+		/* Child process */
 		if (execvp(args[0], args) == -1)
 		{
 			perror("lsh");
@@ -22,12 +22,12 @@ int lsh_launch(char **args)
 	}
 	else if (pid < 0)
 	{
-		// Error forking
+		/* Error forking */
 		perror("lsh");
 	}
 	else
 	{
-		// Parent process
+		/* Parent process */
 		do
 		{
 			waitpid(pid, &status, WUNTRACED);
@@ -48,7 +48,7 @@ int lsh_execute(char **args)
 
 	if (args[0] == NULL)
 	{
-		// An empty command was entered.
+		/* An empty command was entered. */
 		return 1;
 	}
 

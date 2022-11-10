@@ -21,6 +21,8 @@ int lsh_num_builtins();
 char **lsh_split_line(char *line);
 char *lsh_read_line(void);
 void lsh_loop(void);
+int lsh_launch(char **args);
+int lsh_execute(char **args);
 
 char *builtin_str[] = {
     "cd",

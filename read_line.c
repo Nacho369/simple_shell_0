@@ -8,12 +8,12 @@ char *lsh_read_line(void)
 {
 #ifdef LSH_USE_STD_GETLINE
 	char *line = NULL;
-	ssize_t bufsize = 0; // have getline allocate a buffer for us
+	ssize_t bufsize = 0; /* have getline allocate a buffer for us */
 	if (getline(&line, &bufsize, stdin) == -1)
 	{
 		if (feof(stdin))
 		{
-			exit(EXIT_SUCCESS); // We received an EOF
+			exit(EXIT_SUCCESS); /* We received an EOF */
 		}
 		else
 		{
@@ -55,7 +55,7 @@ char *lsh_read_line(void)
 		}
 		position++;
 
-		// If we have exceeded the buffer, reallocate.
+		/* If we have exceeded the buffer, reallocate. */
 		if (position >= bufsize)
 		{
 			bufsize += LSH_RL_BUFSIZE;
