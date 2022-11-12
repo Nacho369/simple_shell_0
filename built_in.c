@@ -1,5 +1,6 @@
 #include "shell.h"
 
+
 /*
   List of builtin commands, followed by their corresponding functions.
  */
@@ -7,6 +8,8 @@ int lsh_num_builtins()
 {
 	return sizeof(builtin_str) / sizeof(char *);
 }
+
+
 /**
    @brief Builtin command: change directory.
    @param args List of args.  args[0] is "cd".  args[1] is the directory.
@@ -28,6 +31,7 @@ int lsh_cd(char **args)
 	return 1;
 }
 
+
 /**
    @brief Builtin command: print help.
    @param args List of args.  Not examined.
@@ -36,7 +40,7 @@ int lsh_cd(char **args)
 int lsh_help()
 {
 	int i;
-	printf("Stephen Brennan's LSH\n");
+	printf("SHELL PROJECT - Nacho & Martins\n");
 	printf("Type program names and arguments, and hit enter.\n");
 	printf("The following are built in:\n");
 
@@ -48,6 +52,7 @@ int lsh_help()
 	printf("Use the man command for information on other programs.\n");
 	return 1;
 }
+
 
 /**
    @brief Builtin command: exit.

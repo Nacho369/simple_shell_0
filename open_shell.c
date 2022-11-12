@@ -6,7 +6,7 @@
    @param argv Argument vector.
    @return status code
  */
-int main(int argc, char **argv)
+int main(UNUSED int argc, UNUSED char **argv)
 {
 	/* Load config files, if any. */
 

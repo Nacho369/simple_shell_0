@@ -15,8 +15,10 @@
 
 int _strcmp(char *s1, char *s2);
 int lsh_cd(char **args);
-int lsh_help(char **args);
-int lsh_exit(char **args);
+/* int lsh_help(char **args); */
+int lsh_help();
+/* int lsh_exit(char **args); */
+int lsh_exit();
 int lsh_num_builtins();
 char **lsh_split_line(char *line);
 char *lsh_read_line(void);
